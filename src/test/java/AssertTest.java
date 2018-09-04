@@ -27,16 +27,22 @@ public class AssertTest {
         Assert.assertEquals(0.51, 0.51, 0.01);
         //Assert.assertEquals também compara strings
         Assert.assertEquals("bola", "bola");
+        Assert.assertNotEquals("bola", "casa");
         //Comparação de duas Strings ignorando letras maiusculas
         Assert.assertTrue("bola".equalsIgnoreCase("Bola"));
+               
         
         //Comparação entre dois objetos
         Usuario u1 = new Usuario("Usuario 1");
         Usuario u2 = new Usuario("Usuario 1");
+        Usuario u3 = null;
         
         Assert.assertEquals(u1, u2);
         
         //Verifica se dois objetos são da mesma instancia de classe
         Assert.assertSame(u2, u2);
+        
+        //Verifica se um objeto é nulo
+        Assert.assertNull(u3);
     }
 }

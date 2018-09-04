@@ -5,15 +5,15 @@ package br.ce.wcaquino.servicos;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 import br.ce.wcaquino.entidades.Filme;
 import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.utils.DataUtils;
 import java.util.Date;
-import junit.framework.Assert;
+import org.hamcrest.CoreMatchers;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ErrorCollector;
 
 /**
  *
@@ -21,8 +21,11 @@ import org.junit.Test;
  */
 public class LocacaoServiceTest {
 
+    @Rule
+    public ErrorCollector error = new ErrorCollector();
+
     @Test
-    public void teste() {
+    public void testeLocacao() throws Exception{
         //Cenario
         LocacaoService service = new LocacaoService();
 
@@ -31,11 +34,33 @@ public class LocacaoServiceTest {
         Filme filme = new Filme("Filme 1", 2, 5.0);
 
         //Acao
-        Locacao locacao = service.alugarFilme(usuario, filme);
+        Locacao locacao;
+        /*
+        try {
+            locacao = service.alugarFilme(usuario, filme);
+
+            //Verificação
+            error.checkThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.equalTo(5.0)));
+            //Assert.assertThat(locacao.getValor(), CoreMatchers.is(5.0));
+            error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()),
+                     CoreMatchers.is(true));
+            error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(),
+                     DataUtils.obterDataComDiferencaDias(1)), CoreMatchers.is(true));
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Assert.fail("Não deveria lançar essa exceção");
+        }
+         */
+
+        locacao = service.alugarFilme(usuario, filme);
 
         //Verificação
-        Assert.assertTrue(locacao.getValor() == 5.0);
-        Assert.assertTrue(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()));
-        Assert.assertTrue(DataUtils.isMesmaData(locacao.getDataRetorno(), DataUtils.obterDataComDiferencaDias(1)));
+        error.checkThat(locacao.getValor(), CoreMatchers.is(CoreMatchers.equalTo(6.0)));
+        //Assert.assertThat(locacao.getValor(), CoreMatchers.is(5.0));
+        error.checkThat(DataUtils.isMesmaData(locacao.getDataLocacao(), new Date()),
+                CoreMatchers.is(true));
+        error.checkThat(DataUtils.isMesmaData(locacao.getDataRetorno(),
+                DataUtils.obterDataComDiferencaDias(1)), CoreMatchers.is(false));
+
     }
 }
