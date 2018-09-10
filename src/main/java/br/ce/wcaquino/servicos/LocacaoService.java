@@ -19,7 +19,7 @@ public class LocacaoService {
                     throw new LocadoraException("Usuário inválido");
                 }
                 
-                if(filmes == null){
+                if(filmes == null || filmes.isEmpty()){
                      throw new LocadoraException("Nenhum filme encontrado");
                 }
                 

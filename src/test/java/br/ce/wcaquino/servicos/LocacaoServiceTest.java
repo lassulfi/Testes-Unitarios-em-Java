@@ -69,7 +69,7 @@ public class LocacaoServiceTest {
     }  
 
     @Test
-    public void testeLocacao() throws FilmeSemEstoqueException, LocadoraException{
+    public void deveAlugarFilmeComSucesso() throws FilmeSemEstoqueException, LocadoraException{
         //Cenario
         Usuario usuario = new Usuario("Usuario 1");
 
@@ -115,7 +115,7 @@ public class LocacaoServiceTest {
      * @throws Exception 
      */
     @Test(expected = FilmeSemEstoqueException.class)
-    public void testLocacaoFilmeSemEstoque() throws Exception{
+    public void deveLancaExcecaoAoAlugarFilmeSemEstoque() throws Exception{
     
         //Cenario
         Usuario usuario = new Usuario("Usuario 1");
@@ -134,7 +134,7 @@ public class LocacaoServiceTest {
     Forma robusta de validação de exceções
     */
     @Test
-    public void testLocacaoFilmeSemEstoque2(){
+    public void deveLancaExcecaoAoAlugarFilmeSemEstoque2(){
     
         //Cenario
         Usuario usuario = new Usuario("Usuario 1");
@@ -158,7 +158,7 @@ public class LocacaoServiceTest {
     Forma nova de validação da exceções
     */
     @Test
-    public void testLocacaoFilmeSemEstoque3() throws Exception{
+    public void deveLancaExcecaoAoAlugarFilmeSemEstoque3() throws Exception{
     
         //Cenario
         Usuario usuario = new Usuario("Usuario 1");
@@ -177,7 +177,7 @@ public class LocacaoServiceTest {
     }
     
     @Test
-    public void testLocacaoUsuarioVazio() throws FilmeSemEstoqueException{
+    public void naoDeveAlugarFilmeSemUsuario() throws FilmeSemEstoqueException{
         //cenario
        
         List<Filme> filmes = new ArrayList<Filme>();
@@ -196,7 +196,7 @@ public class LocacaoServiceTest {
     }
     
     @Test
-    public void testLocacaoFilmeVazio() throws FilmeSemEstoqueException, LocadoraException{
+    public void naoDeveAlugarFilmeSemFilme() throws FilmeSemEstoqueException, LocadoraException{
         
         //Cenario
 
@@ -207,5 +207,15 @@ public class LocacaoServiceTest {
         
         //Acao
         service.alugarFilme(usuario, null);
+    }
+    
+    @Test
+    public void devePagar75PorcentoNoFilme3(){
+        //cenario
+        Usuario usuario = new Usuario("Asdrubal");
+        
+        //acao
+        
+        //verificacao
     }
 }
