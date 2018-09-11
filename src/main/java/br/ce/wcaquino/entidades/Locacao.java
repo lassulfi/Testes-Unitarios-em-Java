@@ -47,12 +47,9 @@ public class Locacao {
         return valor;
     }
 
-    public void setValor() {
-        valor = 0.0;
+    public void setValor(double valor) {
         
-        for (Filme filme : filmes) {
-            valor += filme.getPrecoLocacao();
-        }
+        this.valor = valor;
     }
 
     public void setFilme(Filme filme) {
