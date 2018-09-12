@@ -10,6 +10,8 @@ import br.ce.wcaquino.entidades.Locacao;
 import br.ce.wcaquino.entidades.Usuario;
 import br.ce.wcaquino.exceptions.FilmeSemEstoqueException;
 import br.ce.wcaquino.exceptions.LocadoraException;
+import br.ce.wcaquino.matchers.DiaSemanaMatcher;
+import br.ce.wcaquino.matchers.MatchersProprios;
 import br.ce.wcaquino.utils.DataUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -310,6 +312,9 @@ public class LocacaoServiceTest {
         boolean isSegunda = DataUtils.verificarDiaSemana(resultado.getDataRetorno(), 
                 Calendar.MONDAY);
         
-        Assert.assertTrue(isSegunda);
+        //Assert.assertTrue(isSegunda);
+        //Assert.assertThat(resultado.getDataRetorno(), new DiaSemanaMatcher(Calendar.MONDAY));
+        //Assert.assertThat(resultado.getDataRetorno(), MatchersProprios.caiEm(Calendar.MONDAY));
+        Assert.assertThat(resultado.getDataRetorno(), MatchersProprios.caiNumaSegunda());
     }
 }
