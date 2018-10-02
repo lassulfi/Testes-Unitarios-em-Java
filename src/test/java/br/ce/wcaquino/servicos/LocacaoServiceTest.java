@@ -83,7 +83,7 @@ public class LocacaoServiceTest {
 
         List<Filme> filmes = new ArrayList<Filme>();
         
-        filmes.add(FilmeBuilder.umFilme().agora());
+        filmes.add(FilmeBuilder.umFilme().comValor(5.0).agora());
         
         //Acao
         Locacao locacao;
@@ -130,7 +130,7 @@ public class LocacaoServiceTest {
 
         List<Filme> filmes = new ArrayList<Filme>();
         
-        filmes.add(FilmeBuilder.umFilme().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
         filmes.add(FilmeBuilder.umFilme().agora());
         filmes.add(FilmeBuilder.umFilme().agora());
 
@@ -149,9 +149,9 @@ public class LocacaoServiceTest {
 
         List<Filme> filmes = new ArrayList<Filme>();
         
-        filmes.add(FilmeBuilder.umFilme().agora());
-        filmes.add(FilmeBuilder.umFilme().agora());
-        filmes.add(FilmeBuilder.umFilme().agora());
+        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
+        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
+        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
 
         try {
             //Acao
@@ -173,9 +173,9 @@ public class LocacaoServiceTest {
 
         List<Filme> filmes = new ArrayList<Filme>();
         
-        filmes.add(FilmeBuilder.umFilme().agora());
-        filmes.add(FilmeBuilder.umFilme().agora());
-        filmes.add(FilmeBuilder.umFilme().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
 
         exception.expect(Exception.class);
         exception.expectMessage("Filme sem estoque");
@@ -190,9 +190,9 @@ public class LocacaoServiceTest {
        
         List<Filme> filmes = new ArrayList<Filme>();
         
-        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
-        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
-        filmes.add(FilmeBuilder.umFilme().semEstoque().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
+        filmes.add(FilmeBuilder.umFilmeSemEstoque().agora());
         
         try {
             //acao
@@ -222,9 +222,9 @@ public class LocacaoServiceTest {
             LocadoraException{
         //cenario
         Usuario usuario = UsuarioBuilder.umUsuario().agora();
-        List<Filme> filmes = Arrays.asList(new Filme("Filme 1", 2, 4.0), 
-                new Filme("Filme 2", 2, 4.0), 
-                new Filme("Filme 3", 2, 4.0));
+        List<Filme> filmes = Arrays.asList(FilmeBuilder.umFilme().agora(), 
+                FilmeBuilder.umFilme().agora(), 
+                FilmeBuilder.umFilme().agora());
         
         //acao
         Locacao resultado = service.alugarFilme(usuario, filmes);
@@ -320,4 +320,5 @@ public class LocacaoServiceTest {
         //Assert.assertThat(resultado.getDataRetorno(), MatchersProprios.caiEm(Calendar.MONDAY));
         Assert.assertThat(resultado.getDataRetorno(), MatchersProprios.caiNumaSegunda());
     }
+    
 }

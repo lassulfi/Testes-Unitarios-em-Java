@@ -24,13 +24,29 @@ public class FilmeBuilder {
         builder.filme = new Filme();
         builder.filme.setNome("Zorra total");
         builder.filme.setEstoque(2);
-        builder.filme.setPrecoLocacao(5.0);
+        builder.filme.setPrecoLocacao(4.0);
+        
+        return builder;
+    }
+    
+    public static FilmeBuilder umFilmeSemEstoque(){
+        FilmeBuilder builder = new FilmeBuilder();
+        builder.filme = new Filme();
+        builder.filme.setNome("Zorra total");
+        builder.filme.setEstoque(0);
+        builder.filme.setPrecoLocacao(4.0);
         
         return builder;
     }
     
     public FilmeBuilder semEstoque(){
         filme.setEstoque(0);
+        
+        return this;
+    }
+    
+    public FilmeBuilder comValor(double valor){
+        filme.setPrecoLocacao(valor);
         
         return this;
     }

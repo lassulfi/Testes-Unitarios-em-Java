@@ -1,0 +1,637 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.7804878048780488" branch-rate="0.6511627906976745" lines-covered="96" lines-valid="123" branches-covered="28" branches-valid="43" complexity="1.736842105263158" version="2.1.1" timestamp="1538496778008">
+	<sources>
+		<source>C:/Users/luis.assulfi/Documents/NetBeansProjects/Hydrocom/TestesUnitarios/src/main/java</source>
+		<source>--source</source>
+	</sources>
+	<packages>
+		<package name="br.ce.wcaquino.entidades" line-rate="0.6551724137931034" branch-rate="0.35714285714285715" complexity="1.3703703703703705">
+			<classes>
+				<class name="br.ce.wcaquino.entidades.Filme" filename="br/ce/wcaquino/entidades/Filme.java" line-rate="0.6" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="38" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Double;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+								<line number="12" hits="0" branch="false"/>
+								<line number="13" hits="0" branch="false"/>
+								<line number="14" hits="0" branch="false"/>
+								<line number="15" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getEstoque" signature="()Ljava/lang/Integer;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="24" hits="49" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNome" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getPrecoLocacao" signature="()Ljava/lang/Double;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="46" branch="false"/>
+							</lines>
+						</method>
+						<method name="setEstoque" signature="(Ljava/lang/Integer;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="27" hits="41" branch="false"/>
+								<line number="28" hits="41" branch="false"/>
+							</lines>
+						</method>
+						<method name="setNome" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="38" branch="false"/>
+								<line number="22" hits="38" branch="false"/>
+							</lines>
+						</method>
+						<method name="setPrecoLocacao" signature="(Ljava/lang/Double;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="33" hits="39" branch="false"/>
+								<line number="34" hits="39" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="9" hits="38" branch="false"/>
+						<line number="11" hits="0" branch="false"/>
+						<line number="12" hits="0" branch="false"/>
+						<line number="13" hits="0" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="15" hits="0" branch="false"/>
+						<line number="18" hits="0" branch="false"/>
+						<line number="21" hits="38" branch="false"/>
+						<line number="22" hits="38" branch="false"/>
+						<line number="24" hits="49" branch="false"/>
+						<line number="27" hits="41" branch="false"/>
+						<line number="28" hits="41" branch="false"/>
+						<line number="30" hits="46" branch="false"/>
+						<line number="33" hits="39" branch="false"/>
+						<line number="34" hits="39" branch="false"/>
+					</lines>
+				</class>
+				<class name="br.ce.wcaquino.entidades.Locacao" filename="br/ce/wcaquino/entidades/Locacao.java" line-rate="0.7391304347826086" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="11" branch="false"/>
+								<line number="17" hits="11" branch="false"/>
+								<line number="18" hits="11" branch="false"/>
+								<line number="19" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDataLocacao" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="30" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDataRetorno" signature="()Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="38" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFilme" signature="(I)Lbr/ce/wcaquino/entidades/Filme;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="69" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getFilmes" signature="()Ljava/util/List;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="65" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getUsuario" signature="()Lbr/ce/wcaquino/entidades/Usuario;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getValor" signature="()Ljava/lang/Double;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="47" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDataLocacao" signature="(Ljava/util/Date;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="34" hits="11" branch="false"/>
+								<line number="35" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="setDataRetorno" signature="(Ljava/util/Date;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="42" hits="11" branch="false"/>
+								<line number="43" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFilme" signature="(Lbr/ce/wcaquino/entidades/Filme;)V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
+								<line number="58" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setFilmes" signature="(Ljava/util/List;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="61" hits="11" branch="false"/>
+								<line number="62" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="setUsuario" signature="(Lbr/ce/wcaquino/entidades/Usuario;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="11" branch="false"/>
+								<line number="27" hits="11" branch="false"/>
+							</lines>
+						</method>
+						<method name="setValor" signature="(D)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="52" hits="11" branch="false"/>
+								<line number="53" hits="11" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="11" branch="false"/>
+						<line number="17" hits="11" branch="false"/>
+						<line number="18" hits="11" branch="false"/>
+						<line number="19" hits="11" branch="false"/>
+						<line number="22" hits="0" branch="false"/>
+						<line number="26" hits="11" branch="false"/>
+						<line number="27" hits="11" branch="false"/>
+						<line number="30" hits="2" branch="false"/>
+						<line number="34" hits="11" branch="false"/>
+						<line number="35" hits="11" branch="false"/>
+						<line number="38" hits="2" branch="false"/>
+						<line number="42" hits="11" branch="false"/>
+						<line number="43" hits="11" branch="false"/>
+						<line number="47" hits="11" branch="false"/>
+						<line number="52" hits="11" branch="false"/>
+						<line number="53" hits="11" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="58" hits="0" branch="false"/>
+						<line number="61" hits="11" branch="false"/>
+						<line number="62" hits="11" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="69" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="br.ce.wcaquino.entidades.Usuario" filename="br/ce/wcaquino/entidades/Usuario.java" line-rate="0.6" branch-rate="0.35714285714285715" complexity="2.6666666666666665">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="7" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="9" hits="3" branch="false"/>
+								<line number="10" hits="3" branch="false"/>
+								<line number="11" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.6" branch-rate="0.4166666666666667" complexity="0">
+							<lines>
+								<line number="30" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="31" hits="0" branch="false"/>
+								<line number="33" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="34" hits="0" branch="false"/>
+								<line number="36" hits="1" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="37" hits="0" branch="false"/>
+								<line number="39" hits="1" branch="false"/>
+								<line number="40" hits="1" branch="true" condition-coverage="33% (2/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="2" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="41" hits="0" branch="false"/>
+								<line number="43" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNome" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="0.0" complexity="0">
+							<lines>
+								<line number="23" hits="0" branch="false"/>
+								<line number="24" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="25" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="setNome" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="18" hits="14" branch="false"/>
+								<line number="19" hits="14" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="7" hits="14" branch="false"/>
+						<line number="9" hits="3" branch="false"/>
+						<line number="10" hits="3" branch="false"/>
+						<line number="11" hits="3" branch="false"/>
+						<line number="14" hits="0" branch="false"/>
+						<line number="18" hits="14" branch="false"/>
+						<line number="19" hits="14" branch="false"/>
+						<line number="23" hits="0" branch="false"/>
+						<line number="24" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="25" hits="0" branch="false"/>
+						<line number="30" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="31" hits="0" branch="false"/>
+						<line number="33" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="34" hits="0" branch="false"/>
+						<line number="36" hits="1" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="37" hits="0" branch="false"/>
+						<line number="39" hits="1" branch="false"/>
+						<line number="40" hits="1" branch="true" condition-coverage="33% (2/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="2" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="41" hits="0" branch="false"/>
+						<line number="43" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="br.ce.wcaquino.exceptions" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+			<classes>
+				<class name="br.ce.wcaquino.exceptions.FilmeSemEstoqueException" filename="br/ce/wcaquino/exceptions/FilmeSemEstoqueException.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="3" branch="false"/>
+								<line number="16" hits="3" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="15" hits="3" branch="false"/>
+						<line number="16" hits="3" branch="false"/>
+					</lines>
+				</class>
+				<class name="br.ce.wcaquino.exceptions.LocadoraException" filename="br/ce/wcaquino/exceptions/LocadoraException.java" line-rate="1.0" branch-rate="1.0" complexity="1.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Ljava/lang/String;)V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="15" hits="2" branch="false"/>
+								<line number="16" hits="2" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="15" hits="2" branch="false"/>
+						<line number="16" hits="2" branch="false"/>
+					</lines>
+				</class>
+				<class name="br.ce.wcaquino.exceptions.NaoPodeDividirPorZeroException" filename="br/ce/wcaquino/exceptions/NaoPodeDividirPorZeroException.java" line-rate="1.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="12" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="12" hits="1" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="br.ce.wcaquino.servicos" line-rate="0.9743589743589743" branch-rate="0.9047619047619048" complexity="5.0">
+			<classes>
+				<class name="br.ce.wcaquino.servicos.Calculadora" filename="br/ce/wcaquino/servicos/Calculadora.java" line-rate="1.0" branch-rate="1.0" complexity="1.6666666666666667">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="14" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="dividir" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="26" hits="2" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="27" hits="1" branch="false"/>
+								<line number="30" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="somar" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="17" hits="1" branch="false"/>
+							</lines>
+						</method>
+						<method name="subtrair" signature="(II)I" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="21" hits="1" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="14" hits="5" branch="false"/>
+						<line number="17" hits="1" branch="false"/>
+						<line number="21" hits="1" branch="false"/>
+						<line number="26" hits="2" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="27" hits="1" branch="false"/>
+						<line number="30" hits="1" branch="false"/>
+					</lines>
+				</class>
+				<class name="br.ce.wcaquino.servicos.LocacaoService" filename="br/ce/wcaquino/servicos/LocacaoService.java" line-rate="0.9696969696969697" branch-rate="0.8947368421052632" complexity="15.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="16" hits="23" branch="false"/>
+							</lines>
+						</method>
+						<method name="alugarFilme" signature="(Lbr/ce/wcaquino/entidades/Usuario;Ljava/util/List;)Lbr/ce/wcaquino/entidades/Locacao;" line-rate="0.96875" branch-rate="0.8947368421052632" complexity="0">
+							<lines>
+								<line number="20" hits="16" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="21" hits="1" branch="false"/>
+								<line number="24" hits="15" branch="true" condition-coverage="75% (3/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="25" hits="1" branch="false"/>
+								<line number="28" hits="14" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="29" hits="49" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="30" hits="3" branch="false"/>
+								<line number="32" hits="46" branch="false"/>
+								<line number="34" hits="11" branch="false"/>
+								<line number="35" hits="11" branch="false"/>
+								<line number="36" hits="11" branch="false"/>
+								<line number="37" hits="11" branch="false"/>
+								<line number="38" hits="11" branch="false"/>
+								<line number="39" hits="57" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="40" hits="46" branch="false"/>
+								<line number="41" hits="46" branch="false"/>
+								<line number="42" hits="46" branch="true" condition-coverage="100% (5/5)">
+									<conditions>
+										<condition number="0" type="switch" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="44" hits="9" branch="false"/>
+								<line number="45" hits="9" branch="false"/>
+								<line number="47" hits="7" branch="false"/>
+								<line number="48" hits="7" branch="false"/>
+								<line number="50" hits="5" branch="false"/>
+								<line number="51" hits="5" branch="false"/>
+								<line number="53" hits="3" branch="false"/>
+								<line number="56" hits="46" branch="false"/>
+								<line number="58" hits="11" branch="false"/>
+								<line number="61" hits="11" branch="false"/>
+								<line number="62" hits="11" branch="false"/>
+								<line number="63" hits="11" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="64" hits="0" branch="false"/>
+								<line number="66" hits="11" branch="false"/>
+								<line number="71" hits="11" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="16" hits="23" branch="false"/>
+						<line number="20" hits="16" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="21" hits="1" branch="false"/>
+						<line number="24" hits="15" branch="true" condition-coverage="75% (3/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="25" hits="1" branch="false"/>
+						<line number="28" hits="14" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="29" hits="49" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="30" hits="3" branch="false"/>
+						<line number="32" hits="46" branch="false"/>
+						<line number="34" hits="11" branch="false"/>
+						<line number="35" hits="11" branch="false"/>
+						<line number="36" hits="11" branch="false"/>
+						<line number="37" hits="11" branch="false"/>
+						<line number="38" hits="11" branch="false"/>
+						<line number="39" hits="57" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="40" hits="46" branch="false"/>
+						<line number="41" hits="46" branch="false"/>
+						<line number="42" hits="46" branch="true" condition-coverage="100% (5/5)">
+							<conditions>
+								<condition number="0" type="switch" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="44" hits="9" branch="false"/>
+						<line number="45" hits="9" branch="false"/>
+						<line number="47" hits="7" branch="false"/>
+						<line number="48" hits="7" branch="false"/>
+						<line number="50" hits="5" branch="false"/>
+						<line number="51" hits="5" branch="false"/>
+						<line number="53" hits="3" branch="false"/>
+						<line number="56" hits="46" branch="false"/>
+						<line number="58" hits="11" branch="false"/>
+						<line number="61" hits="11" branch="false"/>
+						<line number="62" hits="11" branch="false"/>
+						<line number="63" hits="11" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="64" hits="0" branch="false"/>
+						<line number="66" hits="11" branch="false"/>
+						<line number="71" hits="11" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+		<package name="br.ce.wcaquino.utils" line-rate="0.7142857142857143" branch-rate="0.5" complexity="1.4">
+			<classes>
+				<class name="br.ce.wcaquino.utils.DataUtils" filename="br/ce/wcaquino/utils/DataUtils.java" line-rate="0.7142857142857143" branch-rate="0.5" complexity="1.4">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="11" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="adicionarDias" signature="(Ljava/util/Date;I)Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="22" hits="14" branch="false"/>
+								<line number="23" hits="14" branch="false"/>
+								<line number="24" hits="14" branch="false"/>
+								<line number="25" hits="14" branch="false"/>
+							</lines>
+						</method>
+						<method name="isMesmaData" signature="(Ljava/util/Date;Ljava/util/Date;)Z" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="64" hits="4" branch="false"/>
+								<line number="65" hits="4" branch="false"/>
+								<line number="66" hits="4" branch="false"/>
+								<line number="67" hits="4" branch="false"/>
+								<line number="68" hits="8" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="69" hits="4" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="70" hits="4" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="obterData" signature="(III)Ljava/util/Date;" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="48" hits="0" branch="false"/>
+								<line number="49" hits="0" branch="false"/>
+								<line number="50" hits="0" branch="false"/>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="obterDataComDiferencaDias" signature="(I)Ljava/util/Date;" line-rate="1.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="36" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="verificarDiaSemana" signature="(Ljava/util/Date;I)Z" line-rate="1.0" branch-rate="0.5" complexity="0">
+							<lines>
+								<line number="81" hits="13" branch="false"/>
+								<line number="82" hits="13" branch="false"/>
+								<line number="83" hits="13" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="11" hits="0" branch="false"/>
+						<line number="22" hits="14" branch="false"/>
+						<line number="23" hits="14" branch="false"/>
+						<line number="24" hits="14" branch="false"/>
+						<line number="25" hits="14" branch="false"/>
+						<line number="36" hits="3" branch="false"/>
+						<line number="48" hits="0" branch="false"/>
+						<line number="49" hits="0" branch="false"/>
+						<line number="50" hits="0" branch="false"/>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="64" hits="4" branch="false"/>
+						<line number="65" hits="4" branch="false"/>
+						<line number="66" hits="4" branch="false"/>
+						<line number="67" hits="4" branch="false"/>
+						<line number="68" hits="8" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="69" hits="4" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="70" hits="4" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="81" hits="13" branch="false"/>
+						<line number="82" hits="13" branch="false"/>
+						<line number="83" hits="13" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
