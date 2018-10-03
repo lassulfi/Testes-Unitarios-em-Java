@@ -12,10 +12,15 @@ import java.util.List;
  *
  * @author luis.assulfi
  */
-public interface LocacaoDAO {
-    
-    public void salvar(Locacao locacao);
+public class LocacaoDAOFAKE implements LocacaoDAO{
 
-    public List<Locacao> obterLocacoesPendentes();
+    public void salvar(Locacao locacao) {
+        
+    }
+
+    public List<Locacao> obterLocacoesPendentes() {
+        
+        return null;
+    }
     
 }

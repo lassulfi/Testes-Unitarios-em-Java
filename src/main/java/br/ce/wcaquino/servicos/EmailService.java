@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.ce.wcaquino.servicos.daos;
+package br.ce.wcaquino.servicos;
 
-import br.ce.wcaquino.entidades.Locacao;
-import java.util.List;
+import br.ce.wcaquino.entidades.Usuario;
 
 /**
  *
  * @author luis.assulfi
  */
-public interface LocacaoDAO {
+public interface EmailService {
     
-    public void salvar(Locacao locacao);
-
-    public List<Locacao> obterLocacoesPendentes();
+    public void notificarAtraso(Usuario usuario);
     
 }

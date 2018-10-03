@@ -15,62 +15,84 @@ import java.util.Calendar;
 import java.util.List;
 
 public class LocacaoService {
-    
+
     private LocacaoDAO dao;
-	
-	public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) throws FilmeSemEstoqueException, LocadoraException {
-                               
-                if(usuario == null){
-                    throw new LocadoraException("Usuário inválido");
-                }
-                
-                if(filmes == null || filmes.isEmpty()){
-                     throw new LocadoraException("Nenhum filme encontrado");
-                }
-                
-                for(Filme filme : filmes){
-                    if(filme.getEstoque() == 0){
-                        throw new FilmeSemEstoqueException("Filme sem estoque");
-                    }
-                }
-                
-                Locacao locacao = new Locacao();
-		locacao.setFilmes(filmes);
-		locacao.setUsuario(usuario);
-		locacao.setDataLocacao(new Date());
-                double valorTotal = 0.0;
-                for(int i = 0; i < filmes.size(); i++){
-                    Filme filme = filmes.get(i);
-                    double valorFilme = filme.getPrecoLocacao();
-                    switch (i){
-                        case 2:
-                            valorFilme *= 0.75;
-                            break;
-                        case 3:
-                            valorFilme *= 0.50;
-                            break;
-                        case 4:
-                            valorFilme *= 0.25;
-                            break;
-                        case 5:
-                            valorFilme = 0;
-                            break;
-                    }                  
-                    valorTotal += valorFilme;
-                }
-                locacao.setValor(valorTotal);
-                
-		//Entrega no dia seguinte
-		Date dataEntrega = new Date();
-		dataEntrega = adicionarDias(dataEntrega, 1);
-                if(DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY)){
-                    dataEntrega = adicionarDias(dataEntrega, 1);
-                }
-		locacao.setDataRetorno(dataEntrega);
-		
-		//Salvando a locacao...	
-		dao.salvar(locacao);
-		
-		return locacao;
-	}        
+    private SPCService spcService;
+
+    public Locacao alugarFilme(Usuario usuario, List<Filme> filmes) throws FilmeSemEstoqueException, LocadoraException {
+
+        if (usuario == null) {
+            throw new LocadoraException("Usuário inválido");
+        }
+
+        if (filmes == null || filmes.isEmpty()) {
+            throw new LocadoraException("Nenhum filme encontrado");
+        }
+
+        for (Filme filme : filmes) {
+            if (filme.getEstoque() == 0) {
+                throw new FilmeSemEstoqueException("Filme sem estoque");
+            }
+        }
+        
+        if(spcService.possuiNegativacao(usuario)){
+            throw new LocadoraException("Usuario negativado");
+        }
+
+        Locacao locacao = new Locacao();
+        locacao.setFilmes(filmes);
+        locacao.setUsuario(usuario);
+        locacao.setDataLocacao(new Date());
+        double valorTotal = 0.0;
+        for (int i = 0; i < filmes.size(); i++) {
+            Filme filme = filmes.get(i);
+            double valorFilme = filme.getPrecoLocacao();
+            switch (i) {
+                case 2:
+                    valorFilme *= 0.75;
+                    break;
+                case 3:
+                    valorFilme *= 0.50;
+                    break;
+                case 4:
+                    valorFilme *= 0.25;
+                    break;
+                case 5:
+                    valorFilme = 0;
+                    break;
+            }
+            valorTotal += valorFilme;
+        }
+        locacao.setValor(valorTotal);
+
+        //Entrega no dia seguinte
+        Date dataEntrega = new Date();
+        dataEntrega = adicionarDias(dataEntrega, 1);
+        if (DataUtils.verificarDiaSemana(dataEntrega, Calendar.SUNDAY)) {
+            dataEntrega = adicionarDias(dataEntrega, 1);
+        }
+        locacao.setDataRetorno(dataEntrega);
+
+        //Salvando a locacao...	
+        dao.salvar(locacao);
+
+        return locacao;
+    }
+    
+    public void notificarAtrasos(){
+        List<Locacao> locacoes = dao.obterLocacoesPendentes();
+        
+        for(Locacao locacao: locacoes){
+            
+        }
+    }
+    
+    public void setLocacaoDAO(LocacaoDAO dao){
+        this.dao = dao;
+    }
+    
+    public void setSPCService(SPCService spc){
+        this.spcService = spc;
+    }
+
 }
