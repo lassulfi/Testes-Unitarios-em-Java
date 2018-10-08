@@ -25,6 +25,11 @@ public class LocacaoBuilder {
     public static LocacaoBuilder umaLocacao(){
         LocacaoBuilder builder = new LocacaoBuilder();
         builder.locacao = new Locacao();
+        builder.locacao.setUsuario(UsuarioBuilder.umUsuario().agora());
+        builder.locacao.setFilmes(Arrays.asList(FilmeBuilder.umFilme().agora()));
+        builder.locacao.setDataLocacao(new Date());
+        builder.locacao.setDataRetorno(DataUtils.obterDataComDiferencaDias(1));
+        builder.locacao.setValor(4.0);
         
         return builder;
     }
