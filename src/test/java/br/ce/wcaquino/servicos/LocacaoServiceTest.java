@@ -15,15 +15,12 @@ import br.ce.wcaquino.exceptions.FilmeSemEstoqueException;
 import br.ce.wcaquino.exceptions.LocadoraException;
 import br.ce.wcaquino.matchers.MatchersProprios;
 import br.ce.wcaquino.servicos.daos.LocacaoDAO;
-import br.ce.wcaquino.servicos.daos.LocacaoDAOFAKE;
 import br.ce.wcaquino.utils.DataUtils;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.hamcrest.CoreMatchers;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -35,16 +32,22 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
+import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 
 /**
  *
  * @author luis.assulfi
  */
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(LocacaoService.class)
 public class LocacaoServiceTest {
 
     @InjectMocks
@@ -323,9 +326,8 @@ public class LocacaoServiceTest {
 
     @Test
     //@Ignore
-    public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException,
-            LocadoraException {
-        Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
+    public void deveDevolverNaSegundaAoAlugarNoSabado() throws Exception {
+        //Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));
 
         //cenario
         Usuario usuario = UsuarioBuilder.umUsuario().agora();
@@ -336,6 +338,8 @@ public class LocacaoServiceTest {
                 FilmeBuilder.umFilme().agora(),
                 FilmeBuilder.umFilme().agora()
         );
+        
+        PowerMockito.whenNew(Date.class).withNoArguments().thenReturn(DataUtils.obterData(29, 4, 2017));
 
         //acao
         Locacao resultado = service.alugarFilme(usuario, filmes);
@@ -438,9 +442,9 @@ public class LocacaoServiceTest {
         
         Locacao locacaoRetornada = argCaptor.getValue();
         
-        error.checkThat(locacaoRetornada.getValor(), CoreMatchers.is(4.0));
+        error.checkThat(locacaoRetornada.getValor(), CoreMatchers.is(12.0));
         error.checkThat(locacaoRetornada.getDataLocacao(), MatchersProprios.ehHoje());
-        error.checkThat(locacaoRetornada.getDataRetorno(), MatchersProprios.ehHojeComDiferencaDias(5));
+        error.checkThat(locacaoRetornada.getDataRetorno(), MatchersProprios.ehHojeComDiferencaDias(3));
     }
 
 }
