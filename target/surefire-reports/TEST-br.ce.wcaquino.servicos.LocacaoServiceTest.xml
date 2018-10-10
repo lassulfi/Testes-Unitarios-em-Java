@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="1" name="br.ce.wcaquino.servicos.LocacaoServiceTest" time="1.276" errors="0" skipped="0">
+<testsuite tests="17" failures="2" name="br.ce.wcaquino.servicos.LocacaoServiceTest" time="1.554" errors="1" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_121\jre\bin"/>
@@ -62,47 +62,91 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemFilme" time="0.335"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveDevolverNaSegundaAoAlugarNoSabado" time="0.078"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancaExcecaoAoAlugarFilmeSemEstoque2" time="0.005"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveEnviarEmailParaLocacoesAtrasadas" time="0.037">
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemUsuario" time="0.4"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveAlugarFilmeComSucesso" time="0.089"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar0PorcentoNoFilme6" time="0.01"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveAlugarFilmeSemCacularValor" time="0.014">
+    <error message="
+Double cannot be returned by alugarFilme()
+alugarFilme() should return Locacao
+***
+If you&apos;re unsure why you&apos;re getting above error read on.
+Due to the nature of the syntax above problem might occur because:
+1. This exception *might* occur in wrongly written multi-threaded tests.
+   Please refer to Mockito FAQ on limitations of concurrency testing.
+2. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
+   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
+" type="org.mockito.exceptions.misusing.WrongTypeOfReturnValue">org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
+Double cannot be returned by alugarFilme()
+alugarFilme() should return Locacao
+***
+If you&apos;re unsure why you&apos;re getting above error read on.
+Due to the nature of the syntax above problem might occur because:
+1. This exception *might* occur in wrongly written multi-threaded tests.
+   Please refer to Mockito FAQ on limitations of concurrency testing.
+2. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
+   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
+
+	at br.ce.wcaquino.servicos.LocacaoServiceTest.deveAlugarFilmeSemCacularValor(LocacaoServiceTest.java:483)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.internal.runners.TestMethod.invoke(TestMethod.java:68)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:316)
+	at org.junit.internal.runners.MethodRoadie$2.run(MethodRoadie.java:89)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:97)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.junit.rules.Verifier$1.evaluate(Verifier.java:35)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</error>
+  </testcase>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveTratarErroNoSPCService" time="0.011"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemFilme" time="0.003"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar75PorcentoNoFilme3" time="0.007"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar50PorcentoNoFilme4" time="0.004"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveCalcularValorLocacao" time="0.003"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveProrrogarUmaLocacao" time="0.039"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar25PorcentoNoFilme5" time="0.007"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveDevolverNaSegundaAoAlugarNoSabado" time="0.018">
     <failure message="
-Wanted but not invoked:
-emailService.notificarAtraso(
-    Usuario: nome = Zezé
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:408)
-
-However, there were other interactions with this mock:
-emailService.notificarAtraso(
-    Usuario: nome = Asbrubal
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoService.notificarAtrasos(LocacaoService.java:96)
-
-emailService.notificarAtraso(
-    Usuario: nome = Amelia
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoService.notificarAtrasos(LocacaoService.java:96)
-
-" type="Wanted but not invoked">Wanted but not invoked:
-emailService.notificarAtraso(
-    Usuario: nome = Zezé
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:408)
-
-However, there were other interactions with this mock:
-emailService.notificarAtraso(
-    Usuario: nome = Asbrubal
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoService.notificarAtrasos(LocacaoService.java:96)
-
-emailService.notificarAtraso(
-    Usuario: nome = Amelia
-);
--&gt; at br.ce.wcaquino.servicos.LocacaoService.notificarAtrasos(LocacaoService.java:96)
-
-
-	at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:408)
+Expected: Segunda-feira
+     but: was &lt;Thu Oct 11 13:13:00 BRT 2018&gt;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: Segunda-feira
+     but: was &lt;Thu Oct 11 13:13:00 BRT 2018&gt;
+	at org.hamcrest.MatcherAssert.assertThat(MatcherAssert.java:20)
+	at org.junit.Assert.assertThat(Assert.java:956)
+	at org.junit.Assert.assertThat(Assert.java:923)
+	at br.ce.wcaquino.servicos.LocacaoServiceTest.deveDevolverNaSegundaAoAlugarNoSabado(LocacaoServiceTest.java:374)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -146,14 +190,87 @@ emailService.notificarAtraso(
 </failure>
   </testcase>
   <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeParaNegativadoSPC" time="0.005"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancaExcecaoAoAlugarFilmeSemEstoque3" time="0.003"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancaExcecaoAoAlugarFilmeSemEstoque3" time="0.002"/>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveEnviarEmailParaLocacoesAtrasadas" time="0.018">
+    <failure message="
+Wanted but not invoked:
+emailService.notificarAtraso(
+    Usuario: nome = Zezé
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:432)
+
+However, there were other interactions with this mock:
+emailService.notificarAtraso(
+    Usuario: nome = Asbrubal
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:426)
+
+emailService.notificarAtraso(
+    Usuario: nome = Amelia
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:426)
+
+" type="Wanted but not invoked">Wanted but not invoked:
+emailService.notificarAtraso(
+    Usuario: nome = Zezé
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:432)
+
+However, there were other interactions with this mock:
+emailService.notificarAtraso(
+    Usuario: nome = Asbrubal
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:426)
+
+emailService.notificarAtraso(
+    Usuario: nome = Amelia
+);
+-&gt; at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:426)
+
+
+	at br.ce.wcaquino.servicos.LocacaoServiceTest.deveEnviarEmailParaLocacoesAtrasadas(LocacaoServiceTest.java:432)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.internal.runners.TestMethod.invoke(TestMethod.java:68)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:316)
+	at org.junit.internal.runners.MethodRoadie$2.run(MethodRoadie.java:89)
+	at org.junit.internal.runners.MethodRoadie.runBeforesThenTestThenAfters(MethodRoadie.java:97)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.executeTest(PowerMockJUnit44RunnerDelegateImpl.java:300)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTestInSuper(PowerMockJUnit47RunnerDelegateImpl.java:131)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.access$100(PowerMockJUnit47RunnerDelegateImpl.java:59)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner$TestExecutorStatement.evaluate(PowerMockJUnit47RunnerDelegateImpl.java:147)
+	at org.junit.rules.Verifier$1.evaluate(Verifier.java:35)
+	at org.junit.rules.ExpectedException$ExpectedExceptionStatement.evaluate(ExpectedException.java:239)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.evaluateStatement(PowerMockJUnit47RunnerDelegateImpl.java:107)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit47RunnerDelegateImpl$PowerMockJUnit47MethodRunner.executeTest(PowerMockJUnit47RunnerDelegateImpl.java:82)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$PowerMockJUnit44MethodRunner.runBeforesThenTestThenAfters(PowerMockJUnit44RunnerDelegateImpl.java:288)
+	at org.junit.internal.runners.MethodRoadie.runTest(MethodRoadie.java:87)
+	at org.junit.internal.runners.MethodRoadie.run(MethodRoadie.java:50)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.invokeTestMethod(PowerMockJUnit44RunnerDelegateImpl.java:208)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.runMethods(PowerMockJUnit44RunnerDelegateImpl.java:147)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl$1.run(PowerMockJUnit44RunnerDelegateImpl.java:121)
+	at org.junit.internal.runners.ClassRoadie.runUnprotected(ClassRoadie.java:34)
+	at org.junit.internal.runners.ClassRoadie.runProtected(ClassRoadie.java:44)
+	at org.powermock.modules.junit4.internal.impl.PowerMockJUnit44RunnerDelegateImpl.run(PowerMockJUnit44RunnerDelegateImpl.java:123)
+	at org.powermock.modules.junit4.common.internal.impl.JUnit4TestSuiteChunkerImpl.run(JUnit4TestSuiteChunkerImpl.java:121)
+	at org.powermock.modules.junit4.common.internal.impl.AbstractCommonPowerMockRunner.run(AbstractCommonPowerMockRunner.java:53)
+	at org.powermock.modules.junit4.PowerMockRunner.run(PowerMockRunner.java:59)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:53)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:123)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:104)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:164)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:110)
+	at org.apache.maven.surefire.booter.SurefireStarter.invokeProvider(SurefireStarter.java:175)
+	at org.apache.maven.surefire.booter.SurefireStarter.runSuitesInProcessWhenForked(SurefireStarter.java:107)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:68)
+</failure>
+  </testcase>
+  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancaExcecaoAoAlugarFilmeSemEstoque2" time="0.004"/>
   <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveLancaExcecaoAoAlugarFilmeSemEstoque" time="0.004"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveAlugarFilmeComSucesso" time="0.009"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="naoDeveAlugarFilmeSemUsuario" time="0.004"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar75PorcentoNoFilme3" time="0.009"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveTratarErroNoSPCService" time="0.005"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar0PorcentoNoFilme6" time="0.005"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar50PorcentoNoFilme4" time="0.005"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="devePagar25PorcentoNoFilme5" time="0.006"/>
-  <testcase classname="br.ce.wcaquino.servicos.LocacaoServiceTest" name="deveProrrogarUmaLocacao" time="0.005"/>
 </testsuite>
