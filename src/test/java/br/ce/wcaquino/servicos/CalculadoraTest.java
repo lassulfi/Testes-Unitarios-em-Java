@@ -18,7 +18,7 @@ import org.junit.runners.BlockJUnit4ClassRunner;
  *
  * @author luis.assulfi
  */
-@RunWith(ParallelRunner.class)
+//@RunWith(ParallelRunner.class)
 public class CalculadoraTest {
     
     private Calculadora calc;
